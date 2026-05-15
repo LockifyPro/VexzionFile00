@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export function Header(){return <header className='border-b bg-white/80 dark:bg-slate-900/80 backdrop-blur'><div className='max-w-6xl mx-auto p-4 flex gap-4 items-center'><Link href='/' className='font-bold'>Vexzion</Link><nav className='text-sm flex gap-3'><Link href='/directory'>Tools</Link><Link href='/pricing'>Pricing</Link><Link href='/dashboard'>Dashboard</Link></nav></div></header>}
