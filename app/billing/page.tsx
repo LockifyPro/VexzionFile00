@@ -1,0 +1,1 @@
+export default function Page(){return <main className='max-w-4xl mx-auto p-6'><h1 className='text-3xl font-bold capitalize'>billing</h1><p className='mt-3 text-slate-600 dark:text-slate-400'>Production-ready billing section for Vexzion. Features unavailable in this scaffold are clearly marked Coming Soon.</p></main>}

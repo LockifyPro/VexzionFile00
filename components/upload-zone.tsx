@@ -1,0 +1,3 @@
+'use client';
+import { useState } from 'react';
+export function UploadZone({implemented}:{implemented:boolean}){const [progress,setProgress]=useState(0);return <div className='rounded-xl border p-6 bg-white/80 dark:bg-slate-900'><p className='font-medium'>Drag & drop files here</p><p className='text-sm text-slate-500'>Auto-detect file type and process securely.</p><button onClick={()=>setProgress(p=>Math.min(100,p+25))} className='mt-3 rounded bg-slate-900 px-3 py-2 text-white dark:bg-slate-100 dark:text-slate-900'>{implemented?'Simulate Upload':'Coming Soon'}</button><div className='mt-3 h-2 bg-slate-200 rounded'><div className='h-2 bg-blue-500 rounded' style={{width:`${progress}%`}}/></div><p className='text-xs mt-2'>Progress: {progress}%</p></div>}

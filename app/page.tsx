@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import { tools } from '@/data/tools';
+export default function Home(){return <main className='max-w-6xl mx-auto p-6'><h1 className='text-4xl font-bold'>Vexzion — File Conversion SaaS</h1><p className='mt-3 text-slate-600 dark:text-slate-400'>100+ professional file tools across PDF, image, developer, audio, video, and AI categories.</p><div className='mt-6 flex gap-3'><Link href='/directory' className='rounded bg-slate-900 text-white px-4 py-2 dark:bg-white dark:text-black'>Explore Tools</Link><Link href='/pricing' className='rounded border px-4 py-2'>Lifetime Pro $19.99</Link></div><p className='mt-4 text-sm'>{tools.length}+ tools ready with SEO pages and category navigation.</p></main>}

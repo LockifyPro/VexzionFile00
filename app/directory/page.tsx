@@ -1,0 +1,3 @@
+import { ToolCard } from '@/components/tool-card';
+import { categories, tools } from '@/data/tools';
+export default function Directory(){return <main className='max-w-6xl mx-auto p-6'><h1 className='text-3xl font-bold'>Tool Directory</h1><input placeholder='Search tools...' className='mt-4 w-full rounded border p-2' /><div className='grid grid-cols-1 md:grid-cols-4 gap-6 mt-6'><aside className='md:col-span-1 rounded border p-4'><h2 className='font-semibold'>Categories</h2>{categories.map(c=><p key={c.slug} className='text-sm mt-2'>{c.name}</p>)}</aside><section className='md:col-span-3 grid sm:grid-cols-2 gap-4'>{tools.map(t=><ToolCard key={t.slug} tool={t} />)}</section></div></main>}

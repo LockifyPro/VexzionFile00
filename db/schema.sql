@@ -1,0 +1,7 @@
+create table if not exists users (id uuid primary key, email text unique not null, created_at timestamptz default now());
+create table if not exists subscriptions (id uuid primary key, user_id uuid references users(id), plan text not null default 'free', status text not null default 'active', stripe_customer_id text, stripe_payment_intent_id text, ai_plan text default null, created_at timestamptz default now());
+create table if not exists tool_categories (id serial primary key, slug text unique not null, name text not null, is_active boolean default true);
+create table if not exists tools (id serial primary key, slug text unique not null, category_id int references tool_categories(id), title text not null, description text not null, is_active boolean default true, is_featured boolean default false, implemented boolean default false);
+create table if not exists files (id uuid primary key, user_id uuid references users(id), filename text not null, mime_type text, size_bytes bigint, storage_path text, created_at timestamptz default now());
+create table if not exists conversions (id uuid primary key, user_id uuid references users(id), tool_id int references tools(id), file_id uuid references files(id), status text not null, output_path text, processing_ms int, created_at timestamptz default now());
+create table if not exists usage_limits (id serial primary key, plan text unique not null, daily_conversions int not null, max_file_mb int not null, batch_enabled boolean default false, history_limit int not null);
